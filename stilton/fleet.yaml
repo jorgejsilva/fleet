@@ -1,0 +1,6 @@
+namespace: review
+helm:
+  chart: "github.com/jorgejsilva/queijos"
+  releaseName: stilton
+  valuesFiles:
+    - stilton_values.yaml

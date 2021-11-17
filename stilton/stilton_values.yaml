@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  repository: errm/cheese
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "stilton"
+
+nameOverride: "stilton"
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 31002
+
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: stilton.sti.ufpb.br
+      paths:
+        - path: /
+          pathType: Prefix
+#  tls:
+#    - secretName: wildcard-sti
+#      hosts:
+#        - stilton.sti.ufpb.br
