@@ -1,0 +1,6 @@
+namespace: teste
+helm:
+  chart: "github.com/jorgejsilva/queijos"
+  releaseName: cheddar
+  valuesFiles:
+    - cheddar_values.yaml
